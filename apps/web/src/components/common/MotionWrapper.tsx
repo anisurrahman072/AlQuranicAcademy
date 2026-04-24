@@ -71,13 +71,14 @@ export function MotionXItem({
   className,
   index,
   stagger = 0.15,
-  x = -30,
+  y = 24,
 }: {
   children: ReactNode;
   className?: string;
   index: number;
   stagger?: number;
-  x?: number;
+  /** Vertical offset only (horizontal motion widens mobile overflow) */
+  y?: number;
 }) {
   const reduce = useReducedMotion();
   if (reduce) {
@@ -86,8 +87,8 @@ export function MotionXItem({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, x }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: easeOut, delay: index * stagger }}
     >

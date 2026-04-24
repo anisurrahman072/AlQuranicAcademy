@@ -42,7 +42,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className="scroll-smooth">
+    <html
+      lang="en"
+      dir="ltr"
+      className="overflow-x-clip scroll-smooth"
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -56,18 +61,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="geo.placename" content="Narsingdi, Bangladesh" />
       </head>
       <body
-        className={`${inter.variable} ${display.variable} ${amiri.variable} min-h-svh font-sans antialiased`}
+        className={`${inter.variable} ${display.variable} ${amiri.variable} min-h-svh overflow-x-clip font-sans antialiased`}
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
+        suppressHydrationWarning
       >
         <JsonLd />
         <a
           href="#main-content"
-          className="absolute left-[-10000px] top-0 z-[200] inline-block focus:left-4 focus:top-4 focus:max-w-none focus:rounded-md focus:bg-cream focus:px-4 focus:py-2 focus:text-forest focus:shadow-md focus:outline focus:outline-2 focus:outline-gold/50"
+          className="sr-only z-[200] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:inline-block focus:rounded-md focus:bg-cream focus:px-4 focus:py-2 focus:font-medium focus:text-forest focus:shadow-md focus:outline focus:outline-2 focus:outline-gold/50"
         >
           Skip to main content
         </a>
         <Navbar />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="min-w-0">
+          {children}
+        </main>
         <FloatingWhatsApp />
       </body>
     </html>

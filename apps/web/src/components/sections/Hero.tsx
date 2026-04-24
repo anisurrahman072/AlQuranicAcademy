@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { FacebookFollowButton } from "@/components/common/FacebookCta";
 import { HeroLanternDecor, IslamicPatternBg } from "@/components/common/IslamicPatternBg";
 import { buildWaUrl } from "@/lib/whatsapp";
 import { buttonVariants } from "@/components/ui/button";
@@ -92,10 +93,10 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-primary/80 lg:hidden" aria-hidden />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_420px] lg:gap-12 lg:px-8 lg:py-32">
-        <div className="text-center lg:text-left">
+        <div className="min-w-0 max-w-full text-balance text-center break-words lg:text-left">
           <FadeUp delay={0}>
             <p
-              className="font-arabic text-right text-2xl text-gold md:text-3xl"
+              className="font-arabic max-w-full break-words text-right text-2xl text-gold md:text-3xl"
               dir="rtl"
             >
               اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ
@@ -132,27 +133,33 @@ export function Hero() {
               level. Your schedule.
             </p>
           </FadeUp>
-          <FadeUp delay={0.6} className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+          <FadeUp
+            delay={0.6}
+            className="mt-10 mx-auto flex w-full max-w-2xl flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:mx-0 lg:justify-start"
+          >
             <a
               href={startWa}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-12 min-h-[48px] border-0 bg-gold-gradient px-6 font-semibold text-forest shadow-gold transition-all hover:scale-[1.03] hover:shadow-gold-lg",
+                "h-12 w-full min-h-[48px] shrink-0 border-0 bg-gold-gradient px-6 text-center font-semibold text-forest shadow-gold transition-all hover:scale-[1.03] hover:shadow-gold-lg sm:w-auto",
               )}
             >
               Start Learning — WhatsApp
             </a>
-            <Link
-              href="#courses"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "h-12 min-h-[48px] border-gold/60 bg-primary/20 text-gold hover:bg-gold/10",
-              )}
-            >
-              Explore Courses ↓
-            </Link>
+            <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
+              <Link
+                href="#courses"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "h-12 w-full min-h-[48px] shrink-0 border-gold/60 bg-primary/20 text-center text-gold hover:bg-gold/10 sm:w-auto",
+                )}
+              >
+                Explore Courses ↓
+              </Link>
+              <FacebookFollowButton className="w-full shrink-0 sm:w-auto" />
+            </div>
           </FadeUp>
           <FadeUp delay={0.8} className="mt-12">
             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-warm/80 lg:justify-start">

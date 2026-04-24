@@ -44,6 +44,13 @@
     rgba(232, 201, 122, 0.35) 50%,
     transparent 100%
   );
+  /* Facebook CTA: blue → teal → soft green, aligned with site forest/navy */
+  --background-image-facebook-premium: linear-gradient(
+    130deg,
+    #1e5fd4 0%,
+    #0a7a8a 48%,
+    #5fd4a0 100%
+  );
   --shadow-gold: 0 8px 32px rgba(201, 168, 76, 0.15);
   --shadow-gold-lg: 0 16px 48px rgba(201, 168, 76, 0.28);
   --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -199,6 +206,17 @@
   }
 }
 
+@keyframes facebook-focus {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(20, 100, 200, 0.35);
+  }
+  50% {
+    box-shadow: 0 7px 30px rgba(20, 100, 200, 0.5),
+      0 0 0 1px rgba(95, 212, 160, 0.35);
+  }
+}
+
 @utility animate-pulse-ring {
   animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -209,6 +227,14 @@
 
 @utility animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@utility bg-facebook-premium {
+  background-image: var(--background-image-facebook-premium);
+}
+
+@utility animate-facebook-focus {
+  animation: facebook-focus 2.2s ease-in-out infinite;
 }
 
 @utility font-arabic {

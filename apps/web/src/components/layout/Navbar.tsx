@@ -13,6 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { FacebookHeaderIcon } from "@/components/common/FacebookCta";
 import { site } from "@/config/site";
 import { WA_FREE_INTRO } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
@@ -39,16 +40,16 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-300",
+        "fixed inset-x-0 top-0 z-40 overflow-x-clip transition-[background-color,box-shadow,backdrop-filter] duration-300",
         scrolled
           ? "bg-primary/95 shadow-nav backdrop-blur-md"
           : "bg-transparent backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-w-0 max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:px-8">
         <Link
           href="/#top"
-          className="group flex min-h-[44px] min-w-[44px] items-center gap-2 transition-transform hover:scale-105"
+          className="group flex min-h-[44px] min-w-0 max-w-full flex-1 items-center gap-2 sm:flex-initial"
         >
           <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-gold/40">
             <Image
@@ -59,8 +60,8 @@ export function Navbar() {
               className="object-cover"
             />
           </span>
-          <span className="font-heading text-lg font-semibold text-white sm:text-xl">
-            <span aria-hidden className="mr-1 text-gold">
+          <span className="min-w-0 font-heading text-base font-semibold leading-tight text-white sm:text-lg md:text-xl">
+            <span aria-hidden className="mr-0.5 text-gold sm:mr-1">
               ☪
             </span>
             {site.name}
@@ -68,7 +69,7 @@ export function Navbar() {
         </Link>
 
         <nav
-          className="hidden items-center gap-6 md:flex"
+          className="hidden items-center gap-4 md:flex lg:gap-6"
           aria-label="Primary"
         >
           {links.map((l) => (
@@ -80,20 +81,23 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={WA_FREE_INTRO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "min-h-11 border-0 bg-gold-gradient px-4 font-semibold text-forest shadow-gold transition-all hover:scale-[1.03] hover:shadow-gold-lg",
-            )}
-          >
-            Book a Free Call
-          </a>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href={WA_FREE_INTRO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "min-h-11 shrink-0 border-0 bg-gold-gradient px-4 font-semibold text-forest shadow-gold transition-all hover:scale-[1.03] hover:shadow-gold-lg",
+              )}
+            >
+              Book a Free Call
+            </a>
+            <FacebookHeaderIcon className="shrink-0" />
+          </div>
         </nav>
 
-        <div className="flex items-center md:hidden">
+        <div className="flex shrink-0 items-center md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className={cn(
@@ -126,10 +130,13 @@ export function Navbar() {
                   href={WA_FREE_INTRO}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-lg bg-gold-gradient px-4 font-semibold text-forest"
+                  className="mt-4 inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-gold-gradient px-4 font-semibold text-forest"
                 >
                   Book a Free Call
                 </a>
+                <div className="mt-3 flex items-center justify-center">
+                  <FacebookHeaderIcon className="size-12" />
+                </div>
               </div>
             </SheetContent>
           </Sheet>
