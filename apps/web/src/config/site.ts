@@ -1,9 +1,11 @@
+import { getSiteUrl } from "@/lib/site-url";
+
 export const site = {
   name: "Al-Qur'anic Academy",
   tagline: "Learn Quran · Understand Quran · Live by Quran",
   description:
     "Online one-to-one Quran classes for learners worldwide. Nazra, Tajweed, and Quran Tilawah — taught by Hafez Mawlana Hafijur Rahman in Bangladesh.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://alquranicacademy.com",
+  url: getSiteUrl(),
   teacher: {
     name: "Hafez Mawlana Hafijur Rahman",
     phone: "+8801982452422",

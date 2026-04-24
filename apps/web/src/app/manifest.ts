@@ -1,20 +1,39 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Al-Qur'anic Academy",
+    name: site.name,
     short_name: "AlQuranic",
-    description:
-      "Online one-to-one Quran classes — Nazra, Tajweed, and Quran tilawah for learners worldwide.",
-    start_url: "/",
+    description: site.description,
+    id: site.url,
+    start_url: "/?utm_source=pwa",
     display: "standalone",
     background_color: "#FDF8EE",
     theme_color: "#1A3C2E",
+    orientation: "portrait-primary",
+    categories: ["education", "lifestyle"],
+    lang: "en",
+    dir: "ltr",
+    scope: site.url,
     icons: [
       {
-        src: "/brand/logo.png",
-        sizes: "512x512",
+        src: "/icon.png",
         type: "image/png",
+        sizes: "48x48",
+        purpose: "any",
+      },
+      {
+        src: "/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+        purpose: "any",
+      },
+      {
+        src: "/brand/logo.png",
+        type: "image/png",
+        sizes: "any",
+        purpose: "maskable",
       },
     ],
   };
