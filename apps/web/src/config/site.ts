@@ -4,10 +4,12 @@ export const site = {
   name: "Al-Qur'anic Academy",
   tagline: "Learn Quran · Understand Quran · Live by Quran",
   description:
-    "Online one-to-one Quran classes for learners worldwide. Nazra, Tajweed, and Quran Tilawah — taught by Hafez Mawlana Hafijur Rahman in Bangladesh.",
+    "Online one-to-one Quran classes for learners worldwide. Nazra, Tajweed, and Quran Tilawah — taught by Hafez Mawlana Mufti Hafijur Rahman in Bangladesh.",
   url: getSiteUrl(),
   teacher: {
-    name: "Hafez Mawlana Hafijur Rahman",
+    name: "Hafez Mawlana Mufti Hafijur Rahman",
+    /** Short line for hero, badges, and marketing copy */
+    credentialsShort: "Hafiz, Mawlana & Mufti",
     phone: "+8801982452422",
     phoneDisplay: "+880 1982 452422",
     location: "Narsingdi, Bangladesh",

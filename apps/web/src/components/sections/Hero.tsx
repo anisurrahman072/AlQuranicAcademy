@@ -9,6 +9,7 @@ import {
 } from "@/components/common/BrandLogo";
 import { FacebookFollowButton } from "@/components/common/FacebookCta";
 import { HeroLanternDecor, IslamicPatternBg } from "@/components/common/IslamicPatternBg";
+import { site } from "@/config/site";
 import { buildWaUrl } from "@/lib/whatsapp";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -70,7 +71,14 @@ export function Hero() {
       <IslamicPatternBg />
       <HeroLanternDecor />
       <BrandLogoCircleWatermark />
-      <div className="absolute inset-0 z-0 bg-primary/75 lg:hidden" aria-hidden />
+      <div
+        className="absolute inset-0 z-0 bg-primary/70 lg:hidden"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(15,34,21,0.55)_55%,rgba(15,34,21,0.85)_100%)] lg:hidden"
+        aria-hidden
+      />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_420px] lg:gap-12 lg:px-8 lg:py-32">
         <div className="min-w-0 max-w-full text-balance text-center break-words lg:text-left">
           <FadeUp delay={0}>
@@ -108,7 +116,8 @@ export function Hero() {
           <FadeUp delay={0.45}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-warm/90 md:text-lg mx-auto lg:mx-0">
               Online one-to-one Quran classes for learners worldwide — taught
-              by a qualified Hafiz &amp; Mawlana in Bangladesh. Any age. Any
+              by a qualified {site.teacher.credentialsShort} in Bangladesh. Any
+              age. Any
               level. Your schedule.
             </p>
           </FadeUp>
@@ -142,7 +151,7 @@ export function Hero() {
           </FadeUp>
           <FadeUp delay={0.8} className="mt-12">
             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-warm/80 lg:justify-start">
-              <li>✓ Hafiz &amp; Mawlana Certified Teacher</li>
+              <li>✓ {site.teacher.credentialsShort} Certified Teacher</li>
               <li>✓ Flexible Batch Timings</li>
               <li>✓ Progress Tracking</li>
               <li>✓ Any Time Classes Available</li>

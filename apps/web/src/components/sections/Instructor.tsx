@@ -25,7 +25,7 @@ export function Instructor() {
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl border-2 border-gold/30 shadow-gold/20 shadow-md mx-auto lg:mx-0">
               <Image
                 src="/brand/teacher.png"
-                alt="Portrait of Hafez Mawlana Hafijur Rahman, instructor at Al-Qur'anic Academy, wearing traditional Islamic attire"
+                alt={`Portrait of ${site.teacher.name}, instructor at Al-Qur'anic Academy, wearing traditional Islamic attire`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"
                 className="object-cover object-top"
@@ -41,14 +41,15 @@ export function Instructor() {
               <div className="mt-3 flex flex-wrap gap-2">
                 <Badge className="bg-forest/10 text-forest">Hafiz of the Holy Quran</Badge>
                 <Badge className="bg-forest/10 text-forest">Mawlana (Islamic Scholar)</Badge>
+                <Badge className="bg-forest/10 text-forest">Mufti (Islamic Jurist)</Badge>
                 <Badge className="bg-forest/10 text-forest">Certified Quran Teacher</Badge>
               </div>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  Hafez Mawlana Hafijur Rahman has dedicated his life to the
-                  teaching and transmission of the Holy Quran. Having memorised
-                  the entire Quran and earned formal Islamic scholarship
-                  (Mawlana), he brings rare depth to every lesson — combining
+                  {site.teacher.name} has dedicated his life to the teaching
+                  and transmission of the Holy Quran. Having memorised the entire
+                  Quran and earned formal Islamic scholarship as Mawlana and
+                  Mufti, he brings rare depth to every lesson — combining
                   scholarly precision with patient, encouraging pedagogy.
                 </p>
                 <p>

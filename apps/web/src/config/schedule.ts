@@ -17,7 +17,7 @@ export const schedule: TimeSlot[] = [
   {
     id: "morning",
     label: "Morning Batch",
-    timeRange: "8:00 AM – 10:00 AM",
+    timeRange: "After Fajr – 10:00 AM",
     note: "An energising start to the day. Ideal for school-age children before school and adults with morning availability.",
     days: [],
     whatsappMessage: "I'd like to join the Morning Batch.",
@@ -26,8 +26,8 @@ export const schedule: TimeSlot[] = [
   {
     id: "afternoon",
     label: "Afternoon Batch",
-    timeRange: "~4:00 PM – 6:00 PM",
-    note: "After Asr through Maghrib — a blessed and focused time. A favourite with families.",
+    timeRange: "3:00 PM – 6:00 PM",
+    note: "Afternoon through early evening — a blessed and focused time. A favourite with families.",
     days: [],
     whatsappMessage: "I'd like to join the Afternoon Batch.",
     accent: "forest",
@@ -35,7 +35,7 @@ export const schedule: TimeSlot[] = [
   {
     id: "night",
     label: "Night Batch",
-    timeRange: "9:00 PM – 12:00 AM",
+    timeRange: "From Maghrib – 12:00 AM",
     note: "Perfect for working adults and international students in UK, US, EU, and Gulf time zones.",
     days: [],
     whatsappMessage: "I'd like to join the Night Batch.",

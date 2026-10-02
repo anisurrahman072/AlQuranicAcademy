@@ -47,7 +47,11 @@ export function BrandLogo({
 }
 
 /** Soft circular watermark for mobile hero (not full square asset). */
-export function BrandLogoCircleWatermark({ className }: { className?: string }) {
+export function BrandLogoCircleWatermark({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <div
       className={cn(
@@ -59,16 +63,24 @@ export function BrandLogoCircleWatermark({ className }: { className?: string }) 
       <div
         className={cn(
           "relative aspect-square w-[min(78vw,18rem)] overflow-hidden rounded-full",
-          "opacity-[0.2] motion-safe:animate-logo-ambient",
-          "shadow-[0_0_100px_rgba(201,168,76,0.25)]",
+          "opacity-[0.55]",
+          "shadow-[0_0_80px_rgba(0,0,0,0.45)]",
         )}
       >
         <Image
           src={brandLogo}
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-center blur-[6px] brightness-[0.38] contrast-[1.05] saturate-[0.85]"
           sizes="(max-width: 1024px) 78vw"
+        />
+        <span
+          className="pointer-events-none absolute inset-0 rounded-full bg-primary/55 mix-blend-multiply"
+          aria-hidden
+        />
+        <span
+          className="pointer-events-none absolute inset-0 rounded-full bg-black/30"
+          aria-hidden
         />
       </div>
     </div>

@@ -63,7 +63,7 @@ const graph = [
     "@id": personId,
     name: site.teacher.name,
     image: abs("/brand/teacher.png"),
-    jobTitle: "Quran instructor",
+    jobTitle: `${site.teacher.credentialsShort} — Quran instructor`,
     worksFor: { "@id": orgId },
   },
 ] as const;

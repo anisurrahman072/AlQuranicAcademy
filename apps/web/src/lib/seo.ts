@@ -18,6 +18,8 @@ const keywords: string[] = [
   "Nazra for beginners",
   "Hafiz teacher online",
   "Mawlana Quran teacher",
+  "Mufti Quran teacher",
+  "Hafez Mawlana Mufti Hafijur Rahman",
   "learn Quran online one to one",
   "Quran for kids and adults",
   "Zoom Quran classes",

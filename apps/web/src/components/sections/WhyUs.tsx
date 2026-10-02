@@ -8,8 +8,8 @@ import { SectionHeader } from "@/components/common/SectionHeader";
 const features = [
   {
     icon: GraduationCap,
-    title: "Hafiz & Mawlana Certified",
-    copy: "Your teacher has memorised the entire Quran (Hafiz) and holds a formal Islamic scholarship (Mawlana) — ensuring you learn from authentic, deep knowledge.",
+    title: "Hafiz, Mawlana & Mufti Certified",
+    copy: "Your teacher has memorised the entire Quran (Hafiz), holds formal Islamic scholarship (Mawlana), and is qualified as Mufti — ensuring you learn from authentic, deep knowledge.",
   },
   {
     icon: Clock,
