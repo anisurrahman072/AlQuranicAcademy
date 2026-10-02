@@ -28,7 +28,7 @@ const graph = [
     url: site.url,
     description: site.description,
     logo: { "@type": "ImageObject", url: abs("/brand/logo.png") },
-    image: [abs("/brand/hero-section.png")],
+    image: [abs("/brand/logo.png")],
     sameAs: [site.social.facebook],
     telephone: site.teacher.phone,
     address: {

@@ -1,9 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
+import {
+  BrandLogoCircleWatermark,
+  BrandLogoShowcase,
+} from "@/components/common/BrandLogo";
 import { FacebookFollowButton } from "@/components/common/FacebookCta";
 import { HeroLanternDecor, IslamicPatternBg } from "@/components/common/IslamicPatternBg";
 import { buildWaUrl } from "@/lib/whatsapp";
@@ -42,37 +45,17 @@ function FadeUp({
 
 function HeroImageBlock() {
   const reduce = useReducedMotion();
-  const inner = (
-    <div
-      className="relative h-full min-h-[28rem] w-full max-w-md overflow-hidden rounded-xl lg:ml-auto"
-      style={{
-        clipPath: "polygon(50% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%)",
-        boxShadow: "0 0 60px rgba(201, 168, 76, 0.2)",
-        border: "2px solid rgba(201, 168, 76, 0.45)",
-      }}
-    >
-      <Image
-        src="/brand/hero-section.png"
-        alt="Al-Qur'anic Academy — Quran on a rehal with masjid background"
-        fill
-        priority
-        fetchPriority="high"
-        sizes="(max-width: 1024px) 100vw, 420px"
-        className="object-cover"
-      />
-    </div>
-  );
   if (reduce) {
-    return inner;
+    return <BrandLogoShowcase />;
   }
   return (
     <motion.div
       className="relative h-full w-full"
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7, ease: easeOut, delay: 0.3 }}
+      transition={{ duration: 0.85, ease: easeOut, delay: 0.3 }}
     >
-      {inner}
+      <BrandLogoShowcase />
     </motion.div>
   );
 }
@@ -86,12 +69,8 @@ export function Hero() {
     >
       <IslamicPatternBg />
       <HeroLanternDecor />
-      <div
-        className="absolute inset-0 bg-hero bg-cover bg-center bg-no-repeat opacity-20 lg:hidden"
-        style={{ backgroundImage: "url('/brand/hero-section.png')" }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-primary/80 lg:hidden" aria-hidden />
+      <BrandLogoCircleWatermark />
+      <div className="absolute inset-0 z-0 bg-primary/75 lg:hidden" aria-hidden />
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_420px] lg:gap-12 lg:px-8 lg:py-32">
         <div className="min-w-0 max-w-full text-balance text-center break-words lg:text-left">
           <FadeUp delay={0}>

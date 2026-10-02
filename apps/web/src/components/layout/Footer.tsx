@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { BrandLogo } from "@/components/common/BrandLogo";
 function FacebookIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -31,13 +32,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2">
-              <Image
-                src="/brand/logo.png"
-                alt=""
-                width={40}
-                height={40}
-                className="rounded-full border border-gold/40"
-              />
+              <BrandLogo />
               <span className="font-heading text-xl text-gold">{site.name}</span>
             </div>
             <p className="mt-2 text-sm text-warm/70">{site.tagline}</p>

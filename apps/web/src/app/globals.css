@@ -229,6 +229,35 @@
   animation: float 3s ease-in-out infinite;
 }
 
+@keyframes logo-ambient {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes logo-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility animate-logo-ambient {
+  animation: logo-ambient 5s ease-in-out infinite;
+}
+
+@utility animate-logo-orbit {
+  animation: logo-orbit 22s linear infinite;
+}
+
 @utility bg-facebook-premium {
   background-image: var(--background-image-facebook-premium);
 }

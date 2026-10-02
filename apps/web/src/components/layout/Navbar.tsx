@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -13,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { BrandLogo } from "@/components/common/BrandLogo";
 import { FacebookHeaderIcon } from "@/components/common/FacebookCta";
 import { site } from "@/config/site";
 import { WA_FREE_INTRO } from "@/lib/whatsapp";
@@ -51,15 +51,7 @@ export function Navbar() {
           href="/#top"
           className="group flex min-h-[44px] min-w-0 max-w-full flex-1 items-center gap-2 sm:flex-initial"
         >
-          <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-gold/40">
-            <Image
-              src="/brand/logo.png"
-              alt=""
-              width={40}
-              height={40}
-              className="object-cover"
-            />
-          </span>
+          <BrandLogo priority />
           <span className="min-w-0 font-heading text-base font-semibold leading-tight text-white sm:text-lg md:text-xl">
             <span aria-hidden className="mr-0.5 text-gold sm:mr-1">
               ☪
